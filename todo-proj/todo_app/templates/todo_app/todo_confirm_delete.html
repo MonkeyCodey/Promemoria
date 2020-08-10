@@ -1,0 +1,14 @@
+{% extends "todo_app/base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Sei sicuro di voler cancellare il promemoria "{{ object }}"?</h2>
+        <button type="submit" class="btn btn-danger">Si, cancella</button> 
+        <a href="{% url 'viewtodo' object.pk %}" class="btn btn-secondary">No, annulla</button>     
+    </form> 
+
+</div>
+
+{% endblock %}

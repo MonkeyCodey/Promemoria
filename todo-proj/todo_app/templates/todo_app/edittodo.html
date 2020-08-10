@@ -9,22 +9,12 @@
   {{ error }}
 
   {{ todo.titolo }}
-  <br>
-  {{ todo.memo }}
-  <br>
-  
-  {% if todo.importante == True %}
-    <p>IMPORTANTE!</p>
-  {% else %}
-   <p>Non Importante</p>  
-  {% endif %}
-  <br>
 
-<!-- Note on edittodo: to have the form auto filled the method of the form shouldn't be post! -->
-  <form action={% url 'edittodo' todo.id %}>
-    {% csrf_token %}
-  <button type="submit">Modifica</button>
-  </form>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit">Salva Promemoria</button>
+    </form>
 
     <form method="POST" action={% url 'completetodo' todo.id %}>
       {% csrf_token %}
@@ -38,5 +28,3 @@
 </div>
 
 {% endblock %}
-
-

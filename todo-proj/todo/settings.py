@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
+from .secrets import *
 
 import os
 
@@ -16,11 +17,12 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-from secrets import *
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo_app',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -121,4 +124,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = 'welcome'
+LOGOUT_REDIRECT_URL = 'thanks'

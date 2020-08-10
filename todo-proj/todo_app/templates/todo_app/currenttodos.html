@@ -1,18 +1,16 @@
 {% extends "todo_app/base.html" %}
 
-
-
-
 {% block content %}
 
-Ricordati di fare...
-<ul>
-  {% for todo in todos %}
-    <li><a href="{% url "viewtodo" todo.id %}">
-      {% if todo.importante %}<b>{% endif %}{{ todo.titolo }}{% if todo.importante %}</b>{% endif %}
-    {% if todo.memo %} - {{ todo.memo }}{% endif %}</a></li>
-  {% endfor %}
-</ul>
-
+<div class="jumbotron">
+  <h1>Promemoria</h1>
+  <ul>
+    {% for todo in todos %}
+      <li><a href="{% url "viewtodo" todo.id %}">
+        {% if todo.importante %}<b>{% endif %}{{ todo.titolo }}{% if todo.importante %}</b>{% endif %}
+      {% if todo.memo %} - {{ todo.memo }}{% endif %}</a></li>
+    {% endfor %}
+  </ul>
+</div>
 
 {% endblock %}

@@ -1,17 +1,18 @@
 {% extends "todo_app/base.html" %}
 
 {% block content %}
+<div class="jumbotron">
 
-<h1>Accedi</h1>
+  <h1>Accedi</h1>
 
-<h2> {{ error }}</h2>
+  <h2> {{ error }}</h2>
 
-<form method="POST">
-  {% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Accedi</button>
-</form>
+  <form method="POST">
+    {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Accedi</button>
+  </form>
 
-
+</div>
 
 {% endblock %}

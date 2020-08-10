@@ -2,14 +2,11 @@
 
 {% block content %}
 <div class="jumbotron">
-  <h1>Crea un promemoria</h1>
-
-  <h2> {{ error }}</h2>
-
+  <h1>Registrati</h1>
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-  <button type="submit">Salva Promemoria</button>
+    <input type="submit" class="btn btn-primary" value="Registrati">
   </form>
 
 </div>
